@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let book of books">
-    <a [routerLink]="['book', book.id]">
+    <a [routerLink]="book.id">
       <app-book-item [model]="book" (delete)="onDelete($event)">
       </app-book-item>
     </a>

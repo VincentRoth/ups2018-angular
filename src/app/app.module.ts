@@ -9,8 +9,7 @@ import { BookListComponent } from './consultation/book-list/book-list.component'
 import { BookDisplayComponent } from './consultation/book-display/book-display.component';
 
 const routes: Routes = [
-  { path: '', component: BookListComponent },
-  { path: 'book/:id', component: BookDisplayComponent }
+  { path: '', redirectTo: 'consultation', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -21,12 +21,10 @@ export class BookDisplayComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.paramMap
-      .pipe(
-        switchMap((params: ParamMap) =>
-          this.bookService.getBook(parseInt(params.get('id'), 10))
-        )
-      )
-      .subscribe((book: Book) => (this.model = book));
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.bookService
+        .getBook(+params.get('id'))
+        .subscribe(book => (this.model = book));
+    });
   }
 }
