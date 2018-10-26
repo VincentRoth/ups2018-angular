@@ -16,9 +16,12 @@ export class BookComponent implements OnInit {
     this.book = new Book();
   }
 
-  onSubmit() {
-    this.bookService
-      .createBook(this.book)
-      .subscribe(() => (this.book = new Book()));
+  onSubmit(form) {
+    // Can do something with form
+    if (!form.valid) {
+      this.bookService
+        .createBook(this.book)
+        .subscribe(() => (this.book = new Book()));
+    }
   }
 }

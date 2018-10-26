@@ -1,7 +1,11 @@
-<form (ngSubmit)="onSubmit()">
-  <label for="title">Title</label>
-  <input id="title" placeholder="Title" name="title" [(ngModel)]="book.title">
+<form (ngSubmit)="onSubmit(bookForm)" #bookForm="ngForm">
+  <label for="title" [ngClass]="{'error': !title.valid}">Title</label>
+  <input id="title" placeholder="Title" name="title" [(ngModel)]="book.title" required #title="ngModel">
   <label for="description">Description</label>
-  <input id="description" placeholder="Description" name="description" [(ngModel)]="book.description">
-  <button type="submit">Submit</button>
+  <input id="description" placeholder="Description" name="description" [(ngModel)]="book.description" required
+    minlength="4" #description="ngModel">
+  <button type="submit" [disabled]="!bookForm.valid">Submit</button>
+  <p>Form is {{bookForm.status}}</p>
+  <p *ngIf="!title.valid">Title invalid</p>
+  <p *ngIf="title.errors?.required">Title is required</p>
 </form>

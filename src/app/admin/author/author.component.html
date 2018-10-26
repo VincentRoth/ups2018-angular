@@ -3,5 +3,8 @@
   <input id="firstName" formControlName="firstName">
   <label for="lastName">Last Name</label>
   <input id="lastName" formControlName="lastName">
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="!authorForm.valid">Submit</button>
+  <p>Form is {{authorForm.status}}</p>
+  <p *ngIf="!firstName.valid">Title invalid</p>
+  <p *ngIf="firstName.errors?.required">Title is required</p>
 </form>
