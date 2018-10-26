@@ -25,5 +25,17 @@
       "description": "Desc2",
       "id": 5
     }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "lastName": "lastName",
+      "firstName": "firstName"
+    },
+    {
+      "firstName": "Vincent",
+      "lastName": "Roth",
+      "id": 2
+    }
   ]
 }
