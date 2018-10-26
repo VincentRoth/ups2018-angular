@@ -15,6 +15,10 @@ export class BookService {
     return this.http.get<Book[]>('/api/books');
   }
 
+  createBook(book: Book): Observable<Book> {
+    return this.http.post<Book>('/api/books', book);
+  }
+
   updateBook(book: Book): Observable<Book> {
     return this.http.put<Book>(`/api/books/${book.id}`, book);
   }
