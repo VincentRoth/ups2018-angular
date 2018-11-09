@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookDisplayComponent } from './book-display.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import {
+  HttpTestingController,
+  HttpClientTestingModule
+} from '@angular/common/http/testing';
+import { BookService } from 'src/app/shared/book.service';
 
 describe('BookDisplayComponent', () => {
   let component: BookDisplayComponent;
@@ -8,9 +14,10 @@ describe('BookDisplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookDisplayComponent ]
-    })
-    .compileComponents();
+      declarations: [BookDisplayComponent],
+      imports: [RouterTestingModule, HttpClientTestingModule],
+      providers: [BookService]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
