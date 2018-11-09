@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ConsultationModule } from './consultation/consultation.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', redirectTo: 'consultation', pathMatch: 'full' },
@@ -17,7 +19,9 @@ const routes: Routes = [
     BrowserModule,
     ConsultationModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
