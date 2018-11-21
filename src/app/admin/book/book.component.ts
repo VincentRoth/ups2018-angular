@@ -8,7 +8,7 @@ import { BookService } from 'src/app/shared/book.service';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
-  private book: Book;
+  book: Book;
 
   constructor(private bookService: BookService) {}
 

@@ -8,8 +8,8 @@ import { Book } from 'src/app/shared/book';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  private books: Book[];
-  private selectedBook: Book;
+  books: Book[];
+  selectedBook: Book;
 
   constructor(private bookService: BookService) {}
 
